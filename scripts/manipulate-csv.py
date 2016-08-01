@@ -22,11 +22,12 @@ with open(csvpath, 'r') as csvfile:
     print()
 
     addlist = input().strip()
-    for x in addlist.split(','):
-        splitted = x.strip().split('=')
-        addafter.append(int(splitted[0].strip()))
-        addnames.append(splitted[1].strip())
-        addafterExp.append(splitted[2].strip())
+    if addlist!='':
+        for x in addlist.split(','):
+            splitted = x.strip().split('=')
+            addafter.append(int(splitted[0].strip()))
+            addnames.append(splitted[1].strip())
+            addafterExp.append(splitted[2].strip())
 
     if deletelist!='':
         delete = [int(x.strip()) for x in deletelist.split(',')]
@@ -40,7 +41,22 @@ with open(csvpath, 'r') as csvfile:
         delete[i]+=n
     
     ## now write to new file
-    newfilepath = csvpath[:-4]+'-new'+csvpath[-4:] # -4 is extension including dot
+    filename = None
+    match = re.match(r'(.*)/([^/]+)', csvpath)
+    if match:
+        filename = match.group(2)
+        path = match.group(1)
+    else:
+        filename=csvpath
+        path = '.'
+
+    tempfile = input('Enter the output file name, (press enter for default "new-'+filename+'") : ').strip()
+    if not tempfile=='':
+        newfilepath = path+'/'+tempfile
+    else:
+        newfilepath = path+'/new-'+filename
+    print(newfilepath)
+    assert False
 
     with open(newfilepath, 'w') as newfile:
 
