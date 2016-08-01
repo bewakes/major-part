@@ -80,3 +80,5 @@ with open(mergedpath, 'w') as mergedfile:
             vals = vals + firstdict[key] + seconddict[key]
             mergedfile.write(','.join(vals))
             mergedfile.write('\n')
+        else:
+            print('Not written: '+key)
