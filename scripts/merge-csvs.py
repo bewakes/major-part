@@ -5,6 +5,7 @@ from helpers import *
 '''
     This script merges the specified csv files and stores the merged result file
     where the first file is located
+    ASsumption: both csvs located at same place
 '''
 
 firstpath = sys.argv[1]
@@ -39,6 +40,18 @@ print('Enter the columns respectively from first and second file, one from each,
 joincols = [int(x.strip()) for x in input().strip().split(',')]
 
 joinedcols = ','.join(colslist1 + [x for (i, x) in enumerate(colslist2) if i!=joincols[1]])
+
+match = re.match(r'(.*)/([^/]+)', firstpath)
+if match:
+    path = match.group(1)
+else:
+    path = '.'
+
+tempfile = input('Enter the output file name, (press enter for default "merged-file.csv")This might overwrite existing one!! : ').strip()
+if not tempfile=='':
+    mergedpath = path+'/'+tempfile
+else:
+    mergedpath = path+'/merged-file.csv'
 
 # create dictionaries based on the join columns
 firstdict = {}
