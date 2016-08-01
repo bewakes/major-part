@@ -55,8 +55,6 @@ with open(csvpath, 'r') as csvfile:
         newfilepath = path+'/'+tempfile
     else:
         newfilepath = path+'/new-'+filename
-    print(newfilepath)
-    assert False
 
     with open(newfilepath, 'w') as newfile:
 
