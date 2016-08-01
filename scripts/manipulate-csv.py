@@ -7,6 +7,7 @@ data = {}
 rename = []
 delete = []
 addafter = []
+tempaddafter = []
 addnames = []
 addafterExp =[]
 
@@ -23,22 +24,27 @@ with open(csvpath, 'r') as csvfile:
 
     addlist = input().strip()
     if addlist!='':
+        count = 0 # this is for updating added columns insertion point
         for x in addlist.split(','):
             splitted = x.strip().split('=')
-            addafter.append(int(splitted[0].strip()))
+            addafter.append(int(splitted[0].strip())+count)
+            tempaddafter.append(int(splitted[0].strip()))
             addnames.append(splitted[1].strip())
             addafterExp.append(splitted[2].strip())
+            count+=1
+    print(addafter)
 
     if deletelist!='':
         delete = [int(x.strip()) for x in deletelist.split(',')]
-
     # deletelist update : because first we add and then delete
     for i in range(len(delete)):
         n = 0
-        for x in addafter:
+        for x in tempaddafter:
             if x<delete[i]:
                 n+=1
         delete[i]+=n
+
+    print(delete)
     
     ## now write to new file
     filename = None
@@ -64,9 +70,11 @@ with open(csvpath, 'r') as csvfile:
         # begin with added columns
         for (i, x) in enumerate(addafter):
             colslist.insert(addafter[i]+1, addnames[i])
+        print(colslist)
 
         # then go for deleted columns
         newcols = [x for (i, x) in enumerate(colslist) if i not in delete]
+        print(newcols)
 
         newfile.write(','.join(newcols)+'\n')
 
@@ -74,23 +82,24 @@ with open(csvpath, 'r') as csvfile:
         for line in csvfile:
             vals = [x.strip() for x in line.strip().split(',')]
 
-            print('linecount: ', cnt)
+            #print('linecount: ', cnt)
             cnt+=1
             if ''.join(vals)=='':
                 continue
 
+            tempvals = vals.copy()
             # first consider added cols
             for (i, x) in enumerate(addafterExp):
                 try:
                     exp = re.sub(r'(c)(\d+)', r'float(vals[\2])', x)
-                    print(exp)
-                    print(eval(exp))
-                    vals.insert(addafter[i]+1, format(eval(exp), '0.2f'))
+                    #print(exp)
+                    #print(eval(exp))
+                    tempvals.insert(addafter[i]+1, format(eval(exp), '0.2f'))
                 except ZeroDivisionError:
-                    vals.insert(addafter[i]+1, '0.00')
+                    tempvals.insert(addafter[i]+1, '0.00')
             
             # then consider deleted ones
-            newvals = [ x for (i, x) in enumerate(vals) if i not in delete]
+            newvals = [ x for (i, x) in enumerate(tempvals) if i not in delete]
 
             # write to newfile
             newfile.write(','.join(newvals)+ '\n')
