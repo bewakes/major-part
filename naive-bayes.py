@@ -28,3 +28,7 @@ for val in Y:
 
 y_pred = gnb.fit(X,target).predict(X)
 print("Number of mislabeled points out of a total %d points: %d" %(X.shape[0],(target != y_pred).sum()))
+error = (target != y_pred).sum()
+print error
+accuracy = float(X.shape[0]-error)/X.shape[0]
+print accuracy
