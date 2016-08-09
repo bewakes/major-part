@@ -1,0 +1,175 @@
+{
+    "SHEETS": [
+        {
+            "NAME":"H01P",
+            "TYPE":"VERTICAL",
+            "METADATA": {
+                "TITLE": "OWNERSHIP",
+                "HEADER_ROW": 5,
+                "DATA_START": 8,
+                "ATTRIBUTES": ["OWNED", "RENTED", "INSTITUTIONAL", "OTHERS"],
+                "COLUMNS": ["D", "E", "F", "G"],
+                "VDC_MUNICIPALITY":"B"
+            }
+        },
+        {
+            "NAME":"H02P",
+            "TYPE":"VERTICAL",
+            "METADATA": {
+                "TITLE": "FOUNDATION_TYPE",
+                "HEADER_ROW": 5,
+                "DATA_START": 8,
+                "ATTRIBUTES": ["MUD_BONDED", "CEMENT_BONDED", "RCC_WITH_PILLAR", "WOODEN_PILLAR", "OTHERS", "NOT_STATED"],
+                "COLUMNS": ["D", "E", "F", "G", "H", "I"],
+                "VDC_MUNICIPALITY":"B"
+            }
+        },
+        {
+            "NAME":"H03P",
+            "TYPE":"VERTICAL",
+            "METADATA": {
+                "TITLE": "OUTER_WALL_TYPE",
+                "HEADER_ROW": 5,
+                "DATA_START": 8,
+                "ATTRIBUTES": ["MUD_BONDED", "CEMENT_BONDED", "WOOD_PLANKS", "BAMBOO", "UNBACKED_BRICK", "OTHERS", "NOT_STATED"],
+                "COLUMNS": ["D", "E", "F", "G", "H", "I", "J"],
+                "VDC_MUNICIPALITY":"B"
+            }
+        },
+        {
+            "NAME":"H04P",
+            "TYPE":"VERTICAL",
+            "METADATA": {
+                "TITLE": "ROOF_TYPE",
+                "HEADER_ROW": 5,
+                "DATA_START": 8,
+                "ATTRIBUTES": ["THATCH", "GALV_IRON","TILE_SLATE", "RCC","WOOD_PLANKS", "MUD", "OTHERS","NOT_STATED"],
+                "COLUMNS": ["D", "E", "F", "G", "H", "I", "J", "K"],
+                "VDC_MUNICIPALITY":"B"
+            }
+        },
+        {
+            "NAME":"H05L",
+            "TYPE":"VERTICAL",
+            "METADATA": {
+                "TITLE": "DRINKING_WATER_SOURCE",
+                "HEADER_ROW": 5,
+                "DATA_START": 8,
+                "ATTRIBUTES": ["TAP_PIPED","TUBEWELL","COVERED_WELL", "UNCOVERED_WELL", "SPOUT_WATER", "RIVER_STREAM", "OTHERS", "NOT_STATED"],
+                "COLUMNS": ["D", "E", "F", "G", "H", "I", "J", "K"],
+                "VDC_MUNICIPALITY":"B"
+            }
+        },
+        {
+            "NAME":"H06L",
+            "TYPE":"VERTICAL",
+            "METADATA": {
+                "TITLE": "COOKING_FUEL",
+                "HEADER_ROW": 5,
+                "DATA_START": 8,
+                "ATTRIBUTES": ["WOOD", "KEROSENE", "LPG", "GUITHA","BIOGAS", "ELECTRICITY", "NOT_STATED"],
+                "COLUMNS": ["D", "E", "F", "G", "H", "I", "J", "K"],
+                "VDC_MUNICIPALITY":"B"
+            }
+        },
+        {
+            "NAME":"H07P",
+            "TYPE":"VERTICAL",
+            "METADATA": {
+                "TITLE": "LIGHTING_FUEL",
+                "HEADER_ROW": 5,
+                "DATA_START": 8,
+                "ATTRIBUTES": ["ELECTRICITY", "KEROSENE", "BIOGAS", "SOLAR", "OTHERS", "NOT_STATED"],
+                "COLUMNS": ["D", "E", "F", "G", "H", "I"],
+                "VDC_MUNICIPALITY":"B"
+            }
+        },
+        {
+            "NAME":"H08P",
+            "TYPE":"VERTICAL",
+            "METADATA": {
+                "TITLE": "TOILET_TYPE",
+                "HEADER_ROW": 5,
+                "DATA_START": 8,
+                "ATTRIBUTES":["NO_TOILET","FLUSH_TOILET","ORDINARY_TOILET", "NOT_STATED"],
+                "COLUMNS": ["D", "E", "F", "G"],
+                "VDC_MUNICIPALITY":"B"
+            }
+        },
+        {
+            "NAME":"H09L",
+            "TYPE":"VERTICAL",
+            "METADATA": {
+                "TITLE": "HOUSEHOLD_FACILITY",
+                "HEADER_ROW": 5,
+                "DATA_START": 8,
+                "ATTRIBUTES":["NO_FACILITY","AT_LEAST_ONE", "RADIO", "TELEVISION","CABLE_TELEVISION", "COMPUTER","INTERNET","TELEPHONE","MOBILE_PHONE","MOTOR","MOTORCYCLE","CYCLE","OTHER_VEHICLE","REFRIGERATOR", "NOT_STATED"],
+                "COLUMNS": ["D", "E", "F", "G", "H", "I", "J","K","L","M","N","O","P","Q","R"],
+                "VDC_MUNICIPALITY":"B"
+            }
+        },
+        {
+            "NAME":"Ind01P",
+            "TYPE":"VERTICAL",
+            "METADATA": {
+                "TITLE": "HOUSEHOLD_POPULATION_SIZE",
+                "HEADER_ROW": 5,
+                "DATA_START": 8,
+                "ATTRIBUTES":["HOUSEHOLD","TOTAL_POPULATION", "MALE_POPULATION", "FEMALE_POPULATION", "AVERAGE_HOUSEHOLD_SIZE","SEX_RATIO"],
+                "COLUMNS": ["C", "D", "E", "F", "G", "H"],
+                "VDC_MUNICIPALITY":"B"
+            }
+        },
+        {
+            "NAME":"Ind08L",
+            "TYPE":"VERTICAL",
+            "METADATA": {
+                "TITLE": "POPULATION_5_25_SCHOOL_ATTENDENCE_SEX",
+                "HEADER_ROW": 6,
+                "DATA_START": 9,
+                "ATTRIBUTES":["MALE_POPULATION_5_25","FEMALE_POPULATION_5_25", "SCHOOL_GOING_MALE", "SCHOOL_GOING_FEMALE", "NOT_GOING_MALE", "NOT_GOING_FEMALE", "ATTENDENCE_NOT_STATED_MALE", "ATTENDENCE_NOT_STATED_FEMALE"],
+                "COLUMNS": ["C", "D", "E", "F", "G", "H", "I", "J"],
+                "VDC_MUNICIPALITY":"B"
+            }
+        },
+        {
+            "NAME":"Ind07L",
+            "TYPE":"HORIZONTAL",
+            "METADATA": {
+                "TITLE": "POPULATION_EDUCATION_LEVEL_PASSED",
+                "HEADER_ROW": 5,
+                "DATA_START": 12,
+                "ATTRIBUTES":["BEGINNER","PRIMARY_1_5","LOWER_SECONDARY_6_8","SECONDARY_9_10","SLC_AND_EQUIVALENT","INTERMEDIATE", "GRADUATE","POST_GRADUATE_AND_ABOVE", "OTHERS", "NON_FORMAL", "NOT_STATED"],
+                "COLUMNS": ["E", "F", "G", "H", "I", "J","K","L","M","N","O"],
+                "VDC_MUNICIPALITY":"C",
+                "VERT_ATTRIBUTES":["Both Sex", "male", "female"]
+            }
+        },
+        {
+            "NAME":"Ind06P",
+            "TYPE":"HORIZONTAL",
+            "METADATA": {
+                "TITLE": "POPULATION_LITERACY_STATUS_AND_SEX_5_AND_ABOVE",
+                "HEADER_ROW": 5,
+                "DATA_START": 12,
+                "ATTRIBUTES":["POPULATION_5_AND_ABOVE","CAN_READ_WRITE","CAN_READ_ONLY","CANT_READ_WRITE","NOT_STATED", "LITERACY_RATE"],
+                "COLUMNS": ["D", "E", "F", "G", "H", "I"],
+                "VDC_MUNICIPALITY":"C",
+                "VERT_ATTRIBUTES":["Both Sex", "male", "female"]
+            }
+        },
+        {
+            "NAME":"Ind05P",
+            "TYPE":"HORIZONTAL",
+            "METADATA": {
+                "TITLE": "POPULATION_BY_DISABILITY_AND_SEX",
+                "HEADER_ROW": 5,
+                "DATA_START": 12,
+                "ATTRIBUTES":["NO_DISABILITY","PHYSICAL","BLINDNESS_LOW_VISION","DEAF_HEARING","DEAF_BLIND","SPEECH_PROBLEM","MENTAL_DISABILITY", "INTELLECTUAL_DISABILITY","MULTIPLE_DISABILITY"],
+                "COLUMNS": ["E", "F", "G", "H", "I","J","K","L","M"],
+                "VDC_MUNICIPALITY":"C",
+                "VERT_ATTRIBUTES":["Both Sex", "male", "female"]
+            }
+        }
+    ]
+}
