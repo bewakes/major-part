@@ -1,2 +1,3 @@
 3,6,9
-2=OILSEED_RATIO=c2/c1
+2=OILSEED_RATIO=c2/c1,5=POTATO_RATIO=c5/c4,8=SUGARCANE_RATIO=c8/c7
+updated-cash-crops.csv
