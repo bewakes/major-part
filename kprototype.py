@@ -9,10 +9,10 @@ input: source-> csv file,
        usecols-> tuple consisting of index of the columns in csv which needs to be used which is 'None' by default
 output: returns the array of centroids and the seperate array for the categorical modes.
 '''
-def kprototype(source,categorical,n_clusters,usecols=None):
+def kprototype(source,categorical,n_clusters,usecols=None, aggregateField=None):
     syms = np.genfromtxt(source,dtype=str,delimiter=',',usecols=usecols)[0,:]
-    data = np.genfromtxt(source,dtype=object,delimiter=',',usecols=usecols)[1:,:]
-    print syms
+    data = np.genfromtxt(source,dtype=object,delimiter=',',usecols=usecols)[1:,1:]
+    print(syms)
     data = data.astype(float)
     kproto = kprototypes.KPrototypes(n_clusters=n_clusters,init='Cao',verbose=2)
     clusters = kproto.fit_predict(data,categorical=categorical)
